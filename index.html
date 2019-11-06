@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Kalyan Dutia</title>
     <style>
 
     ::selection {
@@ -51,6 +52,17 @@
         font-weight: 700;
         font-size: 2em;
     }
+
+    .in_development {
+        font-style: italic;
+        color: purple;
+        display: none;
+    }
+
+    .link_dev:hover + .in_development {
+        display:inline;
+    }
+    
     </style>
 
 </head>
@@ -65,8 +77,8 @@
             <p><span class="half_background_yellow">Portfolio</span></p>
             <ul>
                 <li>
-                    <a href="https://github.com/kdutia/pytorch-NLP">pytorch-NLP</a>: common NLP models built in PyTorch, starting with classification
-                    and word embeddings. 
+                    <a href="https://github.com/kdutia/pytorch-NLP" class="link_dev">pytorch-NLP</a>: common NLP models built in PyTorch, starting with classification
+                    and word embeddings. <span class="in_development">in development</span>
                 </li>
             </ul>
         </div>
