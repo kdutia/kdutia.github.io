@@ -1,0 +1,84 @@
+/*fonts*/
+@font-face {
+    font-family: "ml1";
+    src: url("ml_webfonts/MachineLearningFont-v1.woff") format('woff');
+}
+
+@font-face {
+    font-family: "ml2";
+    src: url("ml_webfonts/MachineLearningFont-v2.woff") format('woff');
+}
+
+  
+.maindiv {
+    margin-top: 20vh;
+    margin-left: 40vh;
+    max-width: 1000px;
+    /* font-family: "Iowan Old Style",Palatino,Palatino Linotype,"Palatino LT STD",Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif; */
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+
+/* general styles */
+::selection {
+    background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: #ffb7b7; /* Gecko Browsers */
+}
+
+div .blurb {
+    padding-top: 0px;
+    color: hsl(0,0%,35%);
+}
+
+div .portfolio {
+    padding-top: 10px;
+}
+
+.half_background_yellow {
+    color: hsl(0,0%,0%);
+    background: linear-gradient(to top, yellow 50%, transparent 50%);
+}
+
+.half_background_green {
+    color: hsl(0,0%,0%);
+    background: linear-gradient(to top, rgba(5, 233, 5, 0.4) 50%, transparent 50%);
+}
+
+a, a:visited {
+    color: hsl(0,0%,25%);
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: 600;
+}
+
+ul {
+    list-style-type:none;
+}
+
+li {
+    margin: 0.8rem 0;
+}
+
+#name {
+    font-weight: 700;
+    font-size: 2.5em;
+    font-family: 'ml1';
+    margin-bottom: 6.4rem;
+}
+
+.in_development {
+    font-style: italic;
+    color: purple;
+    display: none;
+}
+
+.link_dev:hover + .in_development {
+    display:inline;
+}
