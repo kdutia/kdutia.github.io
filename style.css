@@ -11,10 +11,9 @@
 
   
 .maindiv {
-    margin-top: 20vh;
-    margin-left: 40vh;
+    margin-top: 30vh;
+    margin-left: 40vw;
     max-width: 1000px;
-    /* font-family: "Iowan Old Style",Palatino,Palatino Linotype,"Palatino LT STD",Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif; */
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 16px;
     line-height: 1.5rem;
@@ -33,6 +32,7 @@
 div .blurb {
     padding-top: 0px;
     color: hsl(0,0%,35%);
+    margin-left: 10vw;
 }
 
 div .portfolio {
@@ -67,10 +67,11 @@ li {
 }
 
 #name {
-    font-weight: 700;
-    font-size: 2.5em;
-    font-family: 'ml1';
-    margin-bottom: 6.4rem;
+    /* font-weight: 500; */
+    font-size: 2em;
+    /* font-family: 'ml1'; */
+    margin-bottom: 3rem;
+    margin-left: -10vw;
 }
 
 .in_development {
@@ -81,4 +82,8 @@ li {
 
 .link_dev:hover + .in_development {
     display:inline;
+}
+
+.link_dev_2 {
+    font-size: 0.8em;
 }
