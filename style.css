@@ -75,7 +75,7 @@ li {
 }
 
 .in_development {
-    font-style: italic;
+    font-size: 0.8em;
     color: purple;
     display: none;
 }
