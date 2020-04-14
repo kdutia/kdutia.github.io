@@ -22,20 +22,27 @@ body {
     line-height: 1.5rem;
 }
 
-@media only screen and (max-width: 700px) {
+@media screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait),
+  (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 4) 
+  and (orientation: portrait) { 
     .maindiv {
-      margin-top: 1em;
-      margin-left: 2vw;
-    }
-    p#name {
+        margin-top: 1em;
         margin-left: 2vw;
-        margin-top: 6vh;
-    }
-    div .blurb {
-        margin-left: 6vw;
-    }
-  }
-  
+      }
+      p#name {
+          margin-left: 2vw;
+          margin-top: 6vh;
+      }
+      div .blurb {
+          margin-left: 6vw;
+      }
+}
 
 
 /* general styles */
