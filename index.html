@@ -7,15 +7,21 @@
         @media all and (max-width: 1024px) {
             BODY {font-size: 28pt; margin-left: 5vw; margin-right: 5vw;} 
         }
-        /* a {
-        color: #000000;
-        } */
+        a {
+            color: blue;
+        }
+
+        a:visited { 
+            color: blue;
+        }
 
         a.collaborator {
             color: #000000;
+            text-decoration: underline dotted;
         }
         a:visited.collaborator {
             color: #000000;
+            text-decoration: underline dotted;
         }
 
         p {padding: 1em 0em}
@@ -38,10 +44,6 @@
         text-decoration: underline dotted;
         }
         
-        a:visited { 
-            color: blue;
-        }
-
         /* ::selection{
             background: transparent;
             color: #0F084B;
