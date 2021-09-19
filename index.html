@@ -10,11 +10,18 @@
             color: #000000; 
             display: flex;
         } 
-
+        
         .maindiv {
             width: calc(65ch + 4rem);
             margin: 2rem;
         }
+
+        @media screen and (max-width: 629px) {
+            .maindiv {
+                width: 100%;
+            }
+        }
+
         /* @media all and (max-width: 1024px) {
             BODY {font-size: 28pt; margin-left: 5vw; margin-right: 5vw;} 
         } */
