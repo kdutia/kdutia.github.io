@@ -6,17 +6,19 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <style type="text/css">
         BODY {
-            font-size: 1.1rem; 
+            /* font-size: 1.1rem; 
             font-family: helvetica, arial, georgia, times; 
-            line-height: 1.6; 
+            line-height: 1.6;  */
             color: #111; 
             background: rgb(248, 248, 248);
-            display: flex;
+            display: block;
         } 
         
         .maindiv {
-            width: calc(70ch + 4rem);
-            margin: 2rem;
+            max-width:60em;
+            margin: 20vh auto;
+            padding: 20px 50px;
+            line-height: 1.4em;
         }
 
         @media screen and (max-width: 629px) {
@@ -26,90 +28,14 @@
             }
         }
 
-        /* @media all and (max-width: 1024px) {
-            BODY {font-size: 28pt; margin-left: 5vw; margin-right: 5vw;} 
-        } */
-        a {
-            color: blue;
-            text-decoration: none;
-        }
-
-        a:visited { 
-            color: blue;
-        }
-
-        a.collaborator {
-            color: #111;
-            text-decoration: underline dotted;
-        }
-        a:visited.collaborator {
-            color: #111;
-            text-decoration: underline dotted;
-        }
-
         @media (prefers-color-scheme: dark) {
             body {
                 color: #ddd;
                 background: #111;
             }
-
-            a {
-                color: #70CAFC;
-            }
-
-            a:visited { 
-                color: #70CAFC;
-            }
-
-            a.collaborator {
-                color: #ddd;
-                text-decoration: underline dotted;
-            }
-            a:visited.collaborator {
-                color: #ddd;
-                text-decoration: underline dotted;
-            }
-        }
-
-        /* .main{padding: 0em; margin-top: 0em;} */
-
-        /* ul {
-            padding-left: 0.8em;
-            list-style-type: none;
-            margin-top: -1.5em;
-        } */
-
-        li {
-            margin: 1em 0;
-            padding: 0 0;
-            /* list-style: "* "; */
-        }
-
-        a:hover
-        {
-        /* background: linear-gradient(to bottom, #ddec06 85%, transparent 15%); */
-        /* color: #1C3528; */
-        text-decoration: underline dotted;
-        }
-        
-        /* ::selection{
-            background: transparent;
-            color: #0F084B;
-        } */
-        .year {
-            padding-top: 1rem;
-        }
-
-        .name {
-            font-size: 1.4rem;
-            margin: 0rem 0 2rem 0;
-        }
-
-        a[target=_blank]:after {
-            content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-            margin: 0 3px 0 5px;
         }
         </style>
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
 
 </head>
 
@@ -117,9 +43,9 @@
 
 <div class="maindiv">
     
-    <p class="name">&#x1F44B;&#x1F3FC; &#9728;&#65039;</p>
+    <p class="name">&#9728;&#65039;</p>
     <p>
-    <p>I'm Kalyan Dutia, a data scientist interested in applying NLP and open data for social good.</p>
+    <h4>I'm Kalyan Dutia, a data scientist interested in applying NLP and open data for social good.</h4>
     <p>At the moment I'm building machine learning based tools for better climate policymaking at <a href="https://climatepolicyradar.org/">Climate Policy Radar</a>.</p> 
     <p>Before this, I worked on a project to <a href="https://www.sciencemuseumgroup.org.uk/project/heritage-connector/">turn museum collections into linked knowledge graphs</a> with the Science Museum and V&A.</p>
     <p>
@@ -127,9 +53,7 @@
     </p>
 
     <p class="main">
-    <p class="year">
-    Some highlights:
-    </p>
+    <h4>Some highlights:</h4>
     <ul>
         <li><a href="https://doi.org/10.1002/ail2.23">A journal article</a> on building linked open data from museum collections using machine learning.</li>
         <li><a href="https://github.com/TheScienceMuseum/elastic-wikidata">A Python library</a> for creating an Elasticsearch index from a Wikidata data dump.</li>
