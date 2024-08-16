@@ -164,7 +164,7 @@
             removeHighlights();
             
             // Highlight the new word
-            const regex = new RegExp(`\\b${word}\\b`, 'gi');
+            const regex = new RegExp(`\\b(${word})\\b`, 'gi');
             content.innerHTML = content.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
         }
 
