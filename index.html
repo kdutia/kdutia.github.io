@@ -50,6 +50,33 @@
         li {
             margin-bottom: 5px;
         }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            text-decoration: underline;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 310px;
+            background-color: #ebd5b4;
+            color: #000;
+            text-align: center;
+            padding: 0px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -155px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+            font-size: 0.8em;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 
 
@@ -76,13 +103,17 @@
         2021–now: <a href="https://climatepolicyradar.org">Climate Policy Radar</a>
             <ul>
                 <li>2024 Co-organised <a href="https://nlp4climate.github.io/" target="_blank">the first NLP for Climate workshop</a> at ACL 2024</li>
+                <li>2024 A <a href="/talks/2024%20CPR%20at%20Nesta data%20science%20away%20day.pdf">talk on impact, equity and community in our data science</a> at Nesta</li>
                 <li>2024 <a href="https://www.climatechange.ai/papers/iclr2024/26" target="_blank">Identifying Climate Targets in National Laws and Policies using Machine Learning</a> (Climate Change AI at ICLR 2024)</li>
-                <li>2023 <a href="https://docs.google.com/presentation/d/1MbYrCa1fhcU7v1X-gLh2sxWonxJpw9uZ5Eiy7qLbRt8/edit#slide=id.g104591c5ed4_0_0" target="_blank">Building an Evidence Base for the Global Stocktake as a Knowledge Graph</a> at the Turing Institute</li>
+                <li>2023 Co-founded a <div class="tooltip">community of people working on Climate NLP
+                    <span class="tooltiptext">email me kalyan@(my company's domain).org to join</span>
+                  </div></li>
+                <li>2023 A talk on <a href="https://docs.google.com/presentation/d/1MbYrCa1fhcU7v1X-gLh2sxWonxJpw9uZ5Eiy7qLbRt8/edit#slide=id.g104591c5ed4_0_0" target="_blank">a policy evidence base as a knowledge graph</a> at the Turing Institute</li>
                 <li>2023 <a href="https://gst1.org/" target="_blank">UNFCCC Global Stocktake Explorer</a></li>
-                <li>2022 <a href="https://app.climatepolicyradar.org" target="_blank">app.climatepolicyradar.org</a></li>
-                <li>2022 <a href="https://climatepolicyradar.org/latest/hacking-ai-for-climate-policy" target="_blank">Thoughts on a hackathon with OpenAI</a></li>
+                <li>2022 Launched our <a href="https://app.climatepolicyradar.org" target="_blank">climate policy (re)search tool</a></li>
+                <!-- <li>2022 <a href="https://climatepolicyradar.org/latest/hacking-ai-for-climate-policy" target="_blank">Thoughts on a hackathon with OpenAI</a></li> -->
                 <li>2022 <a href="https://climatepolicyradar.org/latest/being-a-data-scientist-in-climate-policy" target="_blank">Meet Kalyan</a> :)</li>
-                <li>2022 <a href="https://climatepolicyradar.org/latest/building-natural-language-search-for-climate-change-laws-and-policies" target="_blank">Building a search engine for climate laws and policies</a></li>
+                <li>2022 A blog post on <a href="https://climatepolicyradar.org/latest/building-natural-language-search-for-climate-change-laws-and-policies" target="_blank">how our tool's climate law and policy search works</a></li>
             </ul>
         
             2020–2021: <a href="https://www.sciencemuseumgroup.org.uk/projects/heritage-connector">Heritage Connector</a>
@@ -92,7 +123,7 @@
                 <li>2021 <a href="https://github.com/TheScienceMuseum/elastic-wikidata" target="_blank">elastic-wikidata</a> python library</li>
                 <li>2021 <a href="https://www.youtube.com/watch?v=IVV08dun_jY&list=PLRIxrpy54RHbqCRlYysM9vX_LStbDJ3Ov&index=2" target="_blank">Final project talk</a> for Towards a National Collection, AHRC, UKRI</li>
                 <li>2021 <a href="https://thesciencemuseum.github.io/heritageconnector/post/2021/09/10/demos-announcement/" target="_blank">Visualising a museum knowledge graph with knowledge graph embeddings and UMAP</a></li>
-                <li>2021 <a href="https://doi.org/10.1002/ail2.23" target="_blank">Heritage connector: A machine learning framework for building linked open data from museum collections</a> (research paper, Applied AI Letters)</li>
+                <li>2021 <a href="https://doi.org/10.1002/ail2.23" target="_blank">Heritage connector: A machine learning framework for building linked open data from museum collections</a> (Applied AI Letters)</li>
                 <li>2021 Talk on <a href="https://thesciencemuseum.github.io/heritageconnector/events/2021/02/13/ai4lam-webinar/" target="_blank">combining NER and knowledge graphs</a> for AI4LAM</li>
                 <li>2020 Blog post on <a href="https://thesciencemuseum.github.io/heritageconnector/post/2020/11/06/knowledge-graphs-machine-learning-and-heritage-collections/" target="_blank">knowledge graphs, machine learning and heritage collections</a></li>
             </ul>
