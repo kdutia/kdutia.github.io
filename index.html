@@ -81,6 +81,18 @@
             visibility: visible;
             opacity: 1;
         }
+        .highlight {
+            background-color: yellow;
+            font-weight: 500;
+        }
+        a#search-link {
+            text-decoration: none;
+        }
+        #nav {
+            display: none;
+            margin-top: 5px;
+            font-size: 0.8em;
+        }
     </style>
 
 
@@ -94,26 +106,35 @@
             <p><b>I'm Kalyan Dutia. I like finding ways to apply data science for social good.</b> I'm the Lead Data
                 Scientist at <a href="https://climatepolicyradar.org/" target="_blank">Climate Policy Radar</a> where
                 we're working to improve climate policymaking using NLP. Previously, I designed <a
-                    href="https://www.sciencemuseumgroup.org.uk/project/heritage-connector/" target="_blank">a system to
-                    build a knowledge graph</a> from the museum collections of the Science Museum Group and V&A.</p>
+                href="https://www.sciencemuseumgroup.org.uk/project/heritage-connector/" target="_blank">a system to
+                build a knowledge graph</a> from the museum collections of the Science Museum Group and V&A.</p>
             <p>Find me on <a href="https://www.linkedin.com/in/kalyandutia/" target="_blank">linkedin</a>, <a
-                    href="https://github.com/kdutia/" target="_blank">github</a>, <a href="https://bandcamp.com/kdutia"
-                    target="_blank">bandcamp</a>, and sometimes <a href="https://twitter.com/KDutia"
-                    target="_blank">twitter</a>.
+                href="https://github.com/kdutia/" target="_blank">github</a>, <a href="https://bandcamp.com/kdutia"
+                target="_blank">bandcamp</a>, and sometimes <a href="https://twitter.com/KDutia"
+                target="_blank">twitter</a>.
         </header>
-
+                
         <section id="recent-work">
-            <h2>Recent Work</h2>
-        2021–now: <a href="https://climatepolicyradar.org">Climate Policy Radar</a>
+            <h2>Recent Work <a href="#" id="search-link">🔍</a></h2>
+            <p id="nav">-> quick highlight my
+                <a href="#" onclick="highlightWord('blog post'); return false;">blog posts</a>, 
+                <a href="#" onclick="highlightWord('climate NLP'); return false;">climate NLP community work</a>,
+                <a href="#" onclick="highlightWord('python'); return false;">code</a>, 
+                <a href="#" onclick="highlightWord('paper'); return false;">research papers</a>, 
+                <a href="#" onclick="highlightWord('talk'); return false;">talks</a> or 
+                <a href="#" onclick="highlightWord('tool'); return false;">tools</a>.
+            </p>    
+                2021–now: <a href="https://climatepolicyradar.org">Climate Policy Radar</a>
+            <div id="work-lists">
             <ul>
-                <li>2024 Co-organised <a href="https://nlp4climate.github.io/" target="_blank">the first NLP for Climate workshop</a> at ACL 2024</li>
+                <li>2024 Co-organised <a href="https://nlp4climate.github.io/" target="_blank">the first Climate NLP workshop</a> at ACL 2024</li>
                 <li>2024 A talk on <a href="/talks/2024%20CPR%20at%20Nesta data%20science%20away%20day.pdf">impact, equity and community in our data science</a> at Nesta</li>
-                <li>2024 <a href="https://www.climatechange.ai/papers/iclr2024/26" target="_blank">Identifying Climate Targets in National Laws and Policies using Machine Learning</a> (Climate Change AI at ICLR 2024)</li>
+                <li>2024 <a href="https://www.climatechange.ai/papers/iclr2024/26" target="_blank">Identifying Climate Targets in National Laws and Policies using Machine Learning</a>, a paper in the Climate Change AI workshop at ICLR 2024)</li>
                 <li>2023 Co-founded a <div class="tooltip">community of people working on Climate NLP
                     <span class="tooltiptext">email me kalyan@(my company's domain).org to join</span>
                   </div></li>
                 <li>2023 A talk on <a href="https://docs.google.com/presentation/d/1MbYrCa1fhcU7v1X-gLh2sxWonxJpw9uZ5Eiy7qLbRt8/edit#slide=id.g104591c5ed4_0_0" target="_blank">a policy evidence base as a knowledge graph</a> at the Turing Institute</li>
-                <li>2023 <a href="https://gst1.org/" target="_blank">UNFCCC Global Stocktake Explorer</a></li>
+                <li>2023 <a href="https://gst1.org/" target="_blank">UNFCCC Global Stocktake Explorer</a> tool</li>
                 <li>2022 Launched our <a href="https://app.climatepolicyradar.org" target="_blank">climate policy (re)search tool</a></li>
                 <!-- <li>2022 <a href="https://climatepolicyradar.org/latest/hacking-ai-for-climate-policy" target="_blank">Thoughts on a hackathon with OpenAI</a></li> -->
                 <li>2022 <a href="https://climatepolicyradar.org/latest/being-a-data-scientist-in-climate-policy" target="_blank">Meet Kalyan</a> :)</li>
@@ -126,14 +147,53 @@
                 <li>2021 <a href="https://github.com/TheScienceMuseum/heritage-connector" target="_blank">project code</a>, python</li>
                 <li>2021 <a href="https://github.com/TheScienceMuseum/elastic-wikidata" target="_blank">elastic-wikidata</a> python library</li>
                 <li>2021 <a href="https://www.youtube.com/watch?v=IVV08dun_jY&list=PLRIxrpy54RHbqCRlYysM9vX_LStbDJ3Ov&index=2" target="_blank">Final project talk</a> for Towards a National Collection, AHRC, UKRI</li>
-                <li>2021 <a href="https://thesciencemuseum.github.io/heritageconnector/post/2021/09/10/demos-announcement/" target="_blank">Visualising a museum knowledge graph with knowledge graph embeddings and UMAP</a></li>
-                <li>2021 <a href="https://doi.org/10.1002/ail2.23" target="_blank">Heritage connector: A machine learning framework for building linked open data from museum collections</a> (Applied AI Letters)</li>
+                <li>2021 A blog post on <a href="https://thesciencemuseum.github.io/heritageconnector/post/2021/09/10/demos-announcement/" target="_blank">visualising a museum knowledge graph with knowledge graph embeddings</a></li>
+                <li>2021 <a href="https://doi.org/10.1002/ail2.23" target="_blank">Heritage connector: A machine learning framework for building linked open data from museum collections</a> (paper in Applied AI Letters)</li>
                 <li>2021 Talk on <a href="https://thesciencemuseum.github.io/heritageconnector/events/2021/02/13/ai4lam-webinar/" target="_blank">combining NER and knowledge graphs</a> for AI4LAM</li>
                 <li>2020 Blog post on <a href="https://thesciencemuseum.github.io/heritageconnector/post/2020/11/06/knowledge-graphs-machine-learning-and-heritage-collections/" target="_blank">knowledge graphs, machine learning and heritage collections</a></li>
             </ul>
+            </div>
         </section>
 
     </main>
+    <script>
+        function highlightWord(word) {
+            const content = document.getElementById('work-lists');
+            
+            // Remove all existing highlights
+            removeHighlights();
+            
+            // Highlight the new word
+            const regex = new RegExp(`\\b${word}\\b`, 'gi');
+            content.innerHTML = content.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
+        }
+
+        function removeHighlights() {
+            const content = document.getElementById('work-lists');
+            const highlightedSpans = content.getElementsByClassName('highlight');
+            
+            // Convert the HTMLCollection to an array and iterate backwards
+            Array.from(highlightedSpans).reverse().forEach(span => {
+                const parent = span.parentNode;
+                parent.replaceChild(document.createTextNode(span.textContent), span);
+                parent.normalize(); // Merge adjacent text nodes
+            });
+        }
+
+        // Add click event listener to the document
+        document.addEventListener('click', function(event) {
+            // Check if the clicked element is not a link or within the content div
+            if (!event.target.closest('a') && !event.target.closest('#work-lists')) {
+                removeHighlights();
+            }
+        });
+
+        document.getElementById('search-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            const options = document.getElementById('nav');
+            options.style.display = options.style.display === 'none' || options.style.display === '' ? 'block' : 'none';
+        });
+    </script>
 </body>
 
 </html>
