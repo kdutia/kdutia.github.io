@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="icon"
-        href="https://kalyan.link/sun.png">
+    <link rel="icon" href="https://kalyan.link/sun.png">
     <title>Kalyan Dutia</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <!-- <link rel="stylesheet" href="downstyler.css" /> -->
     <style>
         a, a:visited, a:hover, a:active, .tooltip {
             color: #333;
@@ -28,7 +25,8 @@
             color: #333;
         }
         header {
-            margin-bottom: 20px;
+            padding-top: 200px;
+            /* margin-bottom: 200px; */
         }
         h1 {
             margin-bottom: 10px;
@@ -44,6 +42,11 @@
             margin-bottom: 10px;
             margin-top: 10px;
             font-size: 1em;
+            cursor: pointer;
+            user-select: none;
+        }
+        h2:hover {
+            opacity: 0.8;
         }
         ul {
             padding-left: 20px;
@@ -89,20 +92,36 @@
             text-decoration: none;
         }
         #nav {
-            display: none;
-            margin-left: 1em;
+            /* display: none; */
+            /* margin-left: 1em; */
             margin-top: 5px;
             font-size: 0.8em;
         }
         section#recent-work > div {
             margin-left: 1em;
-            /* padding-left: 1em; */
         }
-
+        
+        /* Styles for collapsible sections */
+        .collapsible-content {
+            display: none;
+        }
+        
+        .collapsible-header {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .collapsible-header::after {
+            content: '→';
+            font-size: 0.9em;
+            margin-left: 2px;
+        }
+        
+        .collapsible-header.collapsed::after {
+            content: '↓';
+        }
     </style>
-
-
-    <!-- <script data-goatcounter="https://kdutia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
 </head>
 
 <body>
@@ -111,67 +130,76 @@
             <img src="plant-avatar.png" width="40px" style="opacity: 50%;">
             <p>
                 I'm <b>Kalyan Dutia</b>, Head of Data Science 
-                at <a href="https://climatepolicyradar.org/" >Climate Policy Radar</a> where
+                at <a href="https://climatepolicyradar.org/">Climate Policy Radar</a> where
                 we're using NLP to improve climate decision-making from documents.
             </p>
             <p>
-                Previously, I designed <a
-                href="https://www.sciencemuseumgroup.org.uk/project/heritage-connector/" >a system to
+                Previously, I designed <a href="https://www.sciencemuseumgroup.org.uk/project/heritage-connector/">a system to
                 build a knowledge graph</a> from the museum collections of the Science Museum Group and V&A.
             </p>
             <p>
-                Find me on <a href="https://www.linkedin.com/in/kalyandutia/" >linkedin</a>, <a href="https://bsky.app/profile/kdutia.bsky.social"
-                >bluesky</a>, <a
-                href="https://github.com/kdutia/" >github</a>, <a href="https://bandcamp.com/kdutia"
-                >bandcamp</a>.
+                Find me on <a href="https://www.linkedin.com/in/kalyandutia/">linkedin</a>, <a href="https://bsky.app/profile/kdutia.bsky.social">bluesky</a>, <a href="https://github.com/kdutia/">github</a>, <a href="https://bandcamp.com/kdutia">bandcamp</a>.
             </p>
         </header>
                 
         <section id="recent-work">
-            <h2>Recent Work <a href="#" id="search-link">🔍</a></h2>
-            <p id="nav">-> highlight
-                <a href="#" onclick="highlightWord('blog post'); return false;">blog posts</a>, 
-                <a href="#" onclick="highlightWord('climate NLP'); return false;">climate NLP community work</a>,
-                <!-- <a href="#" onclick="highlightWord('python'); return false;">code</a>,  -->
-                <a href="#" onclick="highlightWord('paper'); return false;">research papers</a>, 
-                <a href="#" onclick="highlightWord('talk'); return false;">talks</a> or 
-                <a href="#" onclick="highlightWord('tool'); return false;">tools</a>.
-            </p>    
-                2021–now: <a href="https://climatepolicyradar.org">Climate Policy Radar</a>
-            <div id="work-lists">
-            <ul>
-                <li>2024 Paper on <a href="https://arxiv.org/abs/2410.23902">responsible RAG for supporting climate decision-making</a> (<a href="https://queried.labs.climatepolicyradar.org/">demo</a>)</li>
-                <li>2024 Co-organised <a href="https://aclanthology.org/volumes/2024.climatenlp-1/">the first Climate NLP workshop</a> at ACL 2024</li>
-                <li>2024 A talk on <a href="/talks/2024%20CPR%20at%20Nesta data%20science%20away%20day.pdf">impact, equity and community in our data science</a> at Nesta</li>
-                <li>2024 <a href="https://www.climatechange.ai/papers/iclr2024/26">Identifying Climate Targets in National Laws and Policies using Machine Learning</a> (paper in the Climate Change AI workshop at ICLR 2024)</li>
-                <li>2023 Co-founded a <div class="tooltip">community for people working on Climate NLP
-                    <span class="tooltiptext">email me kalyan@(my company's domain).org to join</span>
-                  </div></li>
-                <li>2023 A talk on <a href="https://docs.google.com/presentation/d/1MbYrCa1fhcU7v1X-gLh2sxWonxJpw9uZ5Eiy7qLbRt8/edit#slide=id.g104591c5ed4_0_0">a policy evidence base as a knowledge graph</a> at the Turing Institute</li>
-                <li>2023 <a href="https://gst1.org/">Global Stocktake Explorer</a> tool partnered with the UNFCCC</li> 
-                <li>2022 Launched our <a href="https://app.climatepolicyradar.org">climate policy (re)search tool</a></li>
-                <!-- <li>2022 <a href="https://climatepolicyradar.org/latest/hacking-ai-for-climate-policy">Thoughts on a hackathon with OpenAI</a></li> -->
-                <li>2022 <a href="https://climatepolicyradar.org/latest/being-a-data-scientist-in-climate-policy">Meet Kalyan</a> :)</li>
-                <li>2022 A blog post on <a href="https://climatepolicyradar.org/latest/building-natural-language-search-for-climate-change-laws-and-policies">how our tool's climate law and policy search works</a></li>
-            </ul>
-        </div>
-        2020–2021: <a href="https://www.sciencemuseumgroup.org.uk/projects/heritage-connector">Heritage Connector</a>
-        <div id="work-lists">
-        <ul>
-                <li>2021 Blog post on  <a href="https://thesciencemuseum.github.io/heritageconnector/post/2022/01/07/demonstrators/">experimental interfaces for knowledge graphs on museum data</a></li>
-                <li>2021 <a href="https://github.com/TheScienceMuseum/heritage-connector">project code</a>, python</li>
-                <li>2021 <a href="https://github.com/TheScienceMuseum/elastic-wikidata">elastic-wikidata</a> python library</li>
-                <li>2021 <a href="https://www.youtube.com/watch?v=IVV08dun_jY&list=PLRIxrpy54RHbqCRlYysM9vX_LStbDJ3Ov&index=2">Final project talk</a> for Towards a National Collection, AHRC, UKRI</li>
-                <li>2021 A blog post on <a href="https://thesciencemuseum.github.io/heritageconnector/post/2021/09/10/demos-announcement/">visualising a museum knowledge graph with knowledge graph embeddings</a></li>
-                <li>2021 <a href="https://doi.org/10.1002/ail2.23">Heritage connector: A machine learning framework for building linked open data from museum collections</a> (paper in Applied AI Letters)</li>
-                <li>2021 Talk on <a href="https://thesciencemuseum.github.io/heritageconnector/events/2021/02/13/ai4lam-webinar/">combining NER and knowledge graphs</a> for AI4LAM</li>
-                <li>2020 Blog post on <a href="https://thesciencemuseum.github.io/heritageconnector/post/2020/11/06/knowledge-graphs-machine-learning-and-heritage-collections/">knowledge graphs, machine learning and heritage collections</a></li>
-            </ul>
+            <h2 class="collapsible-header">Recent Work</h2>
+            <div class="collapsible-content">
+                <p id="nav">highlight
+                    <a href="#" onclick="highlightWord('blog post'); return false;">blog posts</a>, 
+                    <a href="#" onclick="highlightWord('climate NLP'); return false;">climate NLP community work</a>,
+                    <a href="#" onclick="highlightWord('paper'); return false;">research papers</a>, 
+                    <a href="#" onclick="highlightWord('talk'); return false;">talks</a> or 
+                    <a href="#" onclick="highlightWord('tool'); return false;">tools</a>.
+                </p>    
+                <div>
+                    2021–now: <a href="https://climatepolicyradar.org">Climate Policy Radar</a>
+                    <div id="work-lists">
+                        <ul>
+                            <li>2024 Paper on <a href="https://arxiv.org/abs/2410.23902">responsible RAG for supporting climate decision-making</a> (<a href="https://queried.labs.climatepolicyradar.org/">demo</a>)</li>
+                            <li>2024 Co-organised <a href="https://aclanthology.org/volumes/2024.climatenlp-1/">the first Climate NLP workshop</a> at ACL 2024</li>
+                            <li>2024 A talk on <a href="/talks/2024%20CPR%20at%20Nesta data%20science%20away%20day.pdf">impact, equity and community in our data science</a> at Nesta</li>
+                            <li>2024 <a href="https://www.climatechange.ai/papers/iclr2024/26">Identifying Climate Targets in National Laws and Policies using Machine Learning</a> (paper in the Climate Change AI workshop at ICLR 2024)</li>
+                            <li>2023 Co-founded a <div class="tooltip">community for people working on Climate NLP
+                                <span class="tooltiptext">email me kalyan@(my company's domain).org to join</span>
+                              </div></li>
+                            <li>2023 A talk on <a href="https://docs.google.com/presentation/d/1MbYrCa1fhcU7v1X-gLh2sxWonxJpw9uZ5Eiy7qLbRt8/edit#slide=id.g104591c5ed4_0_0">a policy evidence base as a knowledge graph</a> at the Turing Institute</li>
+                            <li>2023 <a href="https://gst1.org/">Global Stocktake Explorer</a> tool partnered with the UNFCCC</li> 
+                            <li>2022 Launched our <a href="https://app.climatepolicyradar.org">climate policy (re)search tool</a></li>
+                            <li>2022 <a href="https://climatepolicyradar.org/latest/being-a-data-scientist-in-climate-policy">Meet Kalyan</a> :)</li>
+                            <li>2022 A blog post on <a href="https://climatepolicyradar.org/latest/building-natural-language-search-for-climate-change-laws-and-policies">how our tool's climate law and policy search works</a></li>
+                        </ul>
+                    </div>
+                    2020–2021: <a href="https://www.sciencemuseumgroup.org.uk/projects/heritage-connector">Heritage Connector</a>
+                    <div id="work-lists">
+                        <ul>
+                            <li>2021 Blog post on  <a href="https://thesciencemuseum.github.io/heritageconnector/post/2022/01/07/demonstrators/">experimental interfaces for knowledge graphs on museum data</a></li>
+                            <li>2021 <a href="https://github.com/TheScienceMuseum/heritage-connector">project code</a>, python</li>
+                            <li>2021 <a href="https://github.com/TheScienceMuseum/elastic-wikidata">elastic-wikidata</a> python library</li>
+                            <li>2021 <a href="https://www.youtube.com/watch?v=IVV08dun_jY&list=PLRIxrpy54RHbqCRlYysM9vX_LStbDJ3Ov&index=2">Final project talk</a> for Towards a National Collection, AHRC, UKRI</li>
+                            <li>2021 A blog post on <a href="https://thesciencemuseum.github.io/heritageconnector/post/2021/09/10/demos-announcement/">visualising a museum knowledge graph with knowledge graph embeddings</a></li>
+                            <li>2021 <a href="https://doi.org/10.1002/ail2.23">Heritage connector: A machine learning framework for building linked open data from museum collections</a> (paper in Applied AI Letters)</li>
+                            <li>2021 Talk on <a href="https://thesciencemuseum.github.io/heritageconnector/events/2021/02/13/ai4lam-webinar/">combining NER and knowledge graphs</a> for AI4LAM</li>
+                            <li>2020 Blog post on <a href="https://thesciencemuseum.github.io/heritageconnector/post/2020/11/06/knowledge-graphs-machine-learning-and-heritage-collections/">knowledge graphs, machine learning and heritage collections</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
-
     </main>
+    
     <script>
+        // Function to toggle collapsible content
+        // Initialize collapsible section
+        document.querySelector('.collapsible-header').addEventListener('click', (e) => {
+            if (!e.target.matches('#search-link')) {
+                const header = e.currentTarget;
+                const content = header.nextElementSibling;
+                header.classList.toggle('collapsed');
+                content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+            }
+        });
+
         function highlightWord(word) {
             const content = document.getElementById('work-lists');
             
@@ -210,5 +238,4 @@
         });
     </script>
 </body>
-
 </html>
