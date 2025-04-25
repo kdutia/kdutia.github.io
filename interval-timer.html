@@ -140,12 +140,12 @@
   <h1>Interval Timer</h1>
   
   <div id="inputContainer">
-    <input type="text" id="intervalInput" placeholder="e.g. 30x5:20" value="30x5:20">
+    <input type="text" id="intervalInput" placeholder="e.g. 5 30 20" value="5 30 20">
     <button id="startButton">Start</button>
   </div>
   
   <div class="instructions">
-    Format: time × reps : rest (e.g. 30x5:20 = 5 sets of 30s with 20s rest)
+    Format: reps time rest
   </div>
   
   <div id="timerDisplay" class="hidden">
@@ -187,7 +187,36 @@
     function parseInput(input) {
       const queue = [];
       
-      // Match pattern like: 30x5:20
+      // First try to parse as three numbers without punctuation (e.g. "5 30 20")
+      // Now the format is: reps duration rest
+      const simplifiedRegex = /^(\d+)\s+(\d+)\s+(\d+)$/;
+      const simplifiedMatch = input.trim().match(simplifiedRegex);
+      
+      if (simplifiedMatch) {
+        const reps = parseInt(simplifiedMatch[1], 10);
+        const duration = parseInt(simplifiedMatch[2], 10);
+        const rest = parseInt(simplifiedMatch[3], 10);
+        
+        for (let i = 0; i < reps; i++) {
+          queue.push({
+            type: 'work',
+            duration: duration,
+            setInfo: `${i + 1}/${reps}`
+          });
+          
+          if (rest > 0 && i < reps - 1) {
+            queue.push({
+              type: 'rest',
+              duration: rest,
+              setInfo: `${i + 1}/${reps}`
+            });
+          }
+        }
+        
+        return queue;
+      }
+      
+      // Fallback to original pattern like: 30x5:20
       const regex = /^(\d+)(x(\d+))?(:(\d+))?$/;
       const match = input.trim().match(regex);
       
