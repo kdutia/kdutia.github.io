@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interval Timer</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: white;
+      color: #333;
+      line-height: 1.5;
+    }
+    
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    
+    #inputContainer {
+      margin-bottom: 30px;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      font-size: 24px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-family: monospace;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    
+    button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+    
+    button:hover {
+      background-color: #555;
+    }
+    
+    #timerDisplay {
+      margin-top: 20px;
+      padding: 30px 0;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .time {
+      font-size: 96px;
+      font-weight: 700;
+      margin: 20px 0;
+      text-align: center;
+      letter-spacing: -2px;
+    }
+    
+    .current-interval {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .progress {
+      height: 8px;
+      margin: 30px 0;
+      background-color: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background-color: #333;
+      width: 0;
+      transition: width 0.1s;
+    }
+    
+    .intervals-remaining {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+    }
+    
+    .button-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    .instructions {
+      margin-top: 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+    
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 15px;
+      }
+      
+      .time {
+        font-size: 72px;
+      }
+      
+      .current-interval {
+        font-size: 24px;
+      }
+      
+      input[type="text"] {
+        font-size: 20px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Interval Timer</h1>
+  
+  <div id="inputContainer">
+    <input type="text" id="intervalInput" placeholder="e.g. 30x5:20" value="30x5:20">
+    <button id="startButton">Start</button>
+  </div>
+  
+  <div class="instructions">
+    Format: time × reps : rest (e.g. 30x5:20 = 5 sets of 30s with 20s rest)
+  </div>
+  
+  <div id="timerDisplay" class="hidden">
+    <div class="current-interval" id="currentInterval">Work (30s)</div>
+    <div class="time" id="timeDisplay">30</div>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="intervals-remaining" id="intervalsRemaining">Set 1/5</div>
+    <div class="button-container">
+      <button id="pauseButton">Pause</button>
+      <button id="skipButton">Skip</button>
+      <button id="resetButton">Reset</button>
+    </div>
+  </div>
+  
+  <script>
+    const intervalInput = document.getElementById('intervalInput');
+    const startButton = document.getElementById('startButton');
+    const pauseButton = document.getElementById('pauseButton');
+    const skipButton = document.getElementById('skipButton');
+    const resetButton = document.getElementById('resetButton');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const currentInterval = document.getElementById('currentInterval');
+    const progressBar = document.getElementById('progressBar');
+    const intervalsRemaining = document.getElementById('intervalsRemaining');
+    const inputContainer = document.getElementById('inputContainer');
+    const timerDisplay = document.getElementById('timerDisplay');
+    
+    let timerQueue = [];
+    let currentTimer = null;
+    let remainingTime = 0;
+    let totalDuration = 0;
+    let isRunning = false;
+    let isPaused = false;
+    let timerId = null;
+    let audioContext = null;
+    
+    function parseInput(input) {
+      const queue = [];
+      
+      // Match pattern like: 30x5:20
+      const regex = /^(\d+)(x(\d+))?(:(\d+))?$/;
+      const match = input.trim().match(regex);
+      
+      if (match) {
+        const duration = parseInt(match[1], 10);
+        const reps = match[3] ? parseInt(match[3], 10) : 1;
+        const rest = match[5] ? parseInt(match[5], 10) : 0;
+        
+        for (let i = 0; i < reps; i++) {
+          queue.push({
+            type: 'work',
+            duration: duration,
+            setInfo: `${i + 1}/${reps}`
+          });
+          
+          if (rest > 0 && i < reps - 1) {
+            queue.push({
+              type: 'rest',
+              duration: rest,
+              setInfo: `${i + 1}/${reps}`
+            });
+          }
+        }
+      }
+      
+      return queue;
+    }
+    
+    function formatTime(seconds) {
+      if (seconds < 60) {
+        return seconds.toString();
+      } else {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+      }
+    }
+    
+    function updateDisplay() {
+      if (currentTimer) {
+        const percentComplete = 100 - (remainingTime / currentTimer.duration * 100);
+        progressBar.style.width = `${percentComplete}%`;
+        
+        timeDisplay.textContent = formatTime(remainingTime);
+        currentInterval.textContent = `${currentTimer.type === 'work' ? 'Work' : 'Rest'} (${formatTime(currentTimer.duration)}s)`;
+        intervalsRemaining.textContent = `Set ${currentTimer.setInfo}`;
+      }
+    }
+    
+    function startNextTimer() {
+      if (timerQueue.length === 0) {
+        // We're done with all timers
+        resetTimer();
+        playSound(880, 0.3); // Higher pitched sound for finish
+        return;
+      }
+      
+      currentTimer = timerQueue.shift();
+      remainingTime = currentTimer.duration;
+      
+      // Update display
+      updateDisplay();
+      
+      // Start the countdown
+      if (!isPaused) {
+        runTimer();
+      }
+    }
+    
+    function runTimer() {
+      clearInterval(timerId);
+      isRunning = true;
+      
+      timerId = setInterval(() => {
+        remainingTime--;
+        updateDisplay();
+        
+        if (remainingTime <= 0) {
+          clearInterval(timerId);
+          
+          // Play different sounds for work and rest intervals
+          if (currentTimer.type === 'work') {
+            playSound(660, 0.2); // Work interval completed
+          } else {
+            playSound(440, 0.1); // Rest interval completed
+          }
+          
+          // Start the next timer after a small delay
+          setTimeout(startNextTimer, 500);
+        }
+      }, 1000);
+    }
+    
+    function resetTimer() {
+      clearInterval(timerId);
+      isRunning = false;
+      isPaused = false;
+      currentTimer = null;
+      timerQueue = [];
+      
+      inputContainer.classList.remove('hidden');
+      document.querySelector('.instructions').classList.remove('hidden');
+      timerDisplay.classList.add('hidden');
+      startButton.disabled = false;
+    }
+    
+    function pauseTimer() {
+      if (isRunning) {
+        clearInterval(timerId);
+        isRunning = false;
+        isPaused = true;
+        pauseButton.textContent = 'Resume';
+      } else {
+        isPaused = false;
+        runTimer();
+        pauseButton.textContent = 'Pause';
+      }
+    }
+    
+    function skipCurrentInterval() {
+      if (currentTimer) {
+        clearInterval(timerId);
+        startNextTimer();
+      }
+    }
+    
+    function playSound(frequency = 660, duration = 0.2) {
+      try {
+        // Create AudioContext on first use (to comply with autoplay policies)
+        if (!audioContext) {
+          audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        // Create oscillator
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.type = 'sine';
+        oscillator.frequency.value = frequency;
+        
+        // Set volume envelope
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.01);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + duration);
+        
+        // Connect and start
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + duration + 0.05);
+      } catch (e) {
+        console.error('Error playing sound:', e);
+      }
+    }
+    
+    // Event listeners
+    startButton.addEventListener('click', () => {
+      const input = intervalInput.value;
+      timerQueue = parseInput(input);
+      
+      if (timerQueue.length === 0) {
+        alert('Please enter a valid interval pattern (e.g. 30x5:20)');
+        return;
+      }
+      
+      inputContainer.classList.add('hidden');
+      document.querySelector('.instructions').classList.add('hidden');
+      timerDisplay.classList.remove('hidden');
+      
+      // Play a sound to confirm start
+      playSound(440, 0.1);
+      
+      // Start the first timer
+      startNextTimer();
+    });
+    
+    pauseButton.addEventListener('click', pauseTimer);
+    skipButton.addEventListener('click', skipCurrentInterval);
+    resetButton.addEventListener('click', resetTimer);
+    
+    // Handle keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && timerDisplay.classList.contains('hidden') === false) {
+        e.preventDefault();
+        pauseTimer();
+      } else if (e.code === 'KeyS' && timerDisplay.classList.contains('hidden') === false) {
+        skipCurrentInterval();
+      }
+    });
+    
+    // Focus on input when page loads
+    window.addEventListener('load', () => {
+      intervalInput.focus();
+    });
+    
+    // Handle enter key in input field
+    intervalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        startButton.click();
+      }
+    });
+  </script>
+</body>
+</html>
