@@ -4,11 +4,11 @@ my work is broadly centered on NLP, climate change and how to do the former resp
 
 **building things**, such as
 
-- parts of each iteration of our [climate policy (re)search tool](https://app.climatepolicyradar.org)
-- a technical analysis tool [for the First Global Stocktake](https://gst1.org/), partnered with the UNFCCC
 - collaborative research, on
   - [responsible RAG for climate decision-making from documents](https://arxiv.org/abs/2410.23902)
   - [identifying climate targets in national laws and policies using machine learning](https://www.climatechange.ai/papers/iclr2024/26) (ICLR 2024)
+- a technical analysis tool [for the First Global Stocktake](https://gst1.org/), partnered with the UNFCCC
+- parts of each iteration of our [climate policy (re)search tool](https://app.climatepolicyradar.org)
 
 **supporting the broader community** through organising events and online spaces, and doing talks
 
