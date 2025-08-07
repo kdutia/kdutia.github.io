@@ -2,3 +2,34 @@
 **/.venv
 **/.env
 **/credentials.json
+
+# .gitignore for Hugo
+
+# Hugo build output
+/public/
+/resources/_gen/
+/hugo_stats.json
+
+# Node.js dependencies (if using npm/yarn for assets)
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Netlify/Vercel/other deployment platform files (optional)
+.netlify/
+.vercel/
