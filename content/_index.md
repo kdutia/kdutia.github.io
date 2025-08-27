@@ -17,7 +17,8 @@ my work is broadly centered on NLP, climate change and how to do the former resp
 - I've given talks on
   - [impact, equity and community in our data science](/talks/2024_CPR_at_Nesta_data_science_away_day.pdf) at Nesta (2024)
   - [a policy evidence base as a knowledge graph](https://docs.google.com/presentation/d/1MbYrCa1fhcU7v1X-gLh2sxWonxJpw9uZ5Eiy7qLbRt8/edit#slide=id.g104591c5ed4_0_0) at the Turing Institute (2023)
-
+- I'm sometimes (rarely) on panels, like
+  - Matchmaking for Climate Policy, Information and Finance AI Solutions at [Bonn AI and Climate Expert Meeting](https://unu.edu/conference/bonn-ai-climate-2024) (2024)
 
 before Climate Policy Radar I was lead developer on the [Heritage Connector](https://www.sciencemuseumgroup.org.uk/projects/heritage-connector) project, which built a system for building knowledge graphs from museum collections using NLP and Wikidata. we wrote a [peer-reviewed paper](https://doi.org/10.1002/ail2.23), maintained [a blog](https://thesciencemuseum.github.io/heritageconnector/), and showed off some of our demos in a [final talk](https://www.youtube.com/watch?v=IVV08dun_jY&list=PLRIxrpy54RHbqCRlYysM9vX_LStbDJ3Ov&index=2).
 
