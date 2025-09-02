@@ -42,20 +42,31 @@ The tasks being broadly the same as they always were means that in almost all in
 
 ## Pretty much anyone can now do NLP
 
-With LLMs, the barrier to entry to get near to state-of-the-art performance on many NLP tasks to anyone who can write a prompt template, and populate it with some input text and any other variables. This goes for most of the tasks above (classification, query reformulation and tool use) as well as tasks that used to require heavy knowledge of linguistics, statistics or both (coreference resolution, named entity recognition, relation extraction, word sense disambiguation...).
+With LLMs, the barrier to entry to get near to state-of-the-art performance on many NLP tasks is anyone who can write a prompt template. This goes for most of the tasks above (classification, query reformulation and tool use) as well as tasks that used to require heavy knowledge of linguistics, statistics or both (coreference resolution, named entity recognition, relation extraction, word sense disambiguation...).
 
 Working in an applied setting, this is great! We've got a whole team of people who spend their days thinking about climate and nature policy, and now they're able to train their own classifiers. *And* we've got a whole team of people who think about building impactful research tools and thinking about their users – and they can do NLP too. I won't write any more on this, as Drew Breunig [has already put it better](https://www.dbreunig.com/2025/04/10/the-domain-experts-are-drivers.html) (via Simon Willison).
 
-What does that mean for the applied data scientist? We should focus more on ensuring our domain experts have a good understanding of ML models and how to use them, we should help them be able to write prompts they can run against our data, and we need to support them with good science 👇.
+What does that mean for the applied data scientist? I think it means that we should focus more on ensuring our domain experts have a good understanding of ML models and how to use them; we should help them be able to write prompts they can run against our data; and we need to support them with good science 👇.
 
 ## Applied NLP needs to be supported by good science
 
-(measurement science, plus human science)
+Building agentic AI systems for an applied setting needs a team of engineers, and a team of domain experts. Whilst NLP gradually shifted to building with LLMs I found myself thinking *right, better lean into becoming a great engineer now as no need to do any complex `torch` any more*. I wasn't the only one – in most chats I had with other data scientists they were thinking the same. 
 
----
+Now though, I'm convinced of the opposite. Full-stack software skills are much more important for making demos than scientific robustness, and most of the applied LLM work we've seen so far has been in the realm of a demo.
+
+What I think applied NLP needs now, inspired by that senior researcher's call that this is a time of opportunity, is teams of data scientists ensuring that the systems that the domain experts write the prompts for and the engineers the orchestration for are supported by *trustworthy, pragmatic science*. For me, 'science' here means:
+
+- **evaluation**: building harnesses for precision, recall and F1; fairness and equity; stability and adversarial robustness. Getting good at using LLMs judges which align with humans to scale these processes.
+- **the science of your applied domain**. I've heard from a couple of researchers who, prompted by the sudden ease of creating text of unknown reliability, safety and provanance in their domain, switched from technical problems to human problems [^4]. **Working with systems which work with free text as their inputs and outputs and ...**
+## Conclusion
+
+TODO
+****
 
 [^1]: To add a bit more context, this was said at a climate workshop, where some of the big challenges are tackling misinformation and public debate.
 
 [^2]: Section 3.1.1, https://arxiv.org/abs/2406.11289v1
 
 [^3]: https://www.sciencedirect.com/science/article/abs/pii/S0306457318305466
+
+[^4]: [Niloofar Mireshghallah](https://mireshghallah.github.io/), an AI privacy researcher gave a strong case for working on the human problems during her keynote at the LLM Security workshop at ACL 2025.
