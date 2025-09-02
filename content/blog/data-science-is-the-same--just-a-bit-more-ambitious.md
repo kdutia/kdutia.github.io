@@ -42,6 +42,12 @@ The tasks being broadly the same as they always were means that in almost all in
 
 ## Pretty much anyone can now do NLP
 
+With LLMs, the barrier to entry to get near to state-of-the-art performance on many NLP tasks to anyone who can write a prompt template, and populate it with some input text and any other variables. This goes for most of the tasks above (classification, query reformulation and tool use) as well as tasks that used to require heavy knowledge of linguistics, statistics or both (coreference resolution, named entity recognition, relation extraction, word sense disambiguation...).
+
+Working in an applied setting, this is great! We've got a whole team of people who spend their days thinking about climate and nature policy, and now they're able to train their own classifiers. *And* we've got a whole team of people who think about building impactful research tools and thinking about their users – and they can do NLP too. I won't write any more on this, as Drew Breunig [has already put it better](https://www.dbreunig.com/2025/04/10/the-domain-experts-are-drivers.html) (via Simon Willison).
+
+What does that mean for the applied data scientist? We should focus more on ensuring our domain experts have a good understanding of ML models and how to use them, we should help them be able to write prompts they can run against our data, and we need to support them with good science 👇.
+
 ## Applied NLP needs to be supported by good science
 
 (measurement science, plus human science)
