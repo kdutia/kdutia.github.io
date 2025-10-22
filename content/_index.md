@@ -12,7 +12,7 @@ my work is broadly centered on NLP, climate change and how to do the former resp
 
 **supporting the broader community** through organising events and online spaces, and doing talks
 
-- I co-organised both the [first](https://aclanthology.org/volumes/2024.climatenlp-1/) and [second](https://aclanthology.org/volumes/2025.climatenlp-1/) workshops at ACL (2024-5)
+- I co-organised both the [first](https://aclanthology.org/volumes/2024.climatenlp-1/) and [second](https://aclanthology.org/volumes/2025.climatenlp-1/) climate NLP workshops at ACL (2024-5)
 - I co-founded an [online community for people working on Climate NLP](https://climatenlpcommunity.github.io/), with an active Slack and monthly talks
 - I've given talks on
   - [impact, equity and community in our data science](/talks/2024_CPR_at_Nesta_data_science_away_day.pdf) at Nesta (2024)
