@@ -1,4 +1,4 @@
-hello! I'm ~~principal data scientist~~  ~~head of data science~~ senior data scientist at nonprofit [Climate Policy Radar](https://climatepolicyradar.org/) where we're building free tools which use NLP to improve climate decision-making from documents.
+hello! I'm ~~founding data scientist~~  ~~head of data science~~ senior data scientist at nonprofit [Climate Policy Radar](https://climatepolicyradar.org/) where we're building free tools which use NLP to improve climate decision-making from documents.
 
 my work is broadly centered on NLP, climate change and how to do the former responsibly and collaboratively in the context of the latter. this includes:
 
