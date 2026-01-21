@@ -14,7 +14,7 @@ my work is broadly centered on NLP, climate change and how to do the former resp
 
 - co-organised the [first](https://aclanthology.org/volumes/2024.climatenlp-1/) and [second](https://aclanthology.org/volumes/2025.climatenlp-1/) climate NLP workshops at ACL (2024-5)
 - co-founded an [online, active community for people working on Climate NLP](https://climatenlpcommunity.github.io/)
-- co-wrote a [tutorial on using our open knowledge graph for climate policy analysis](https://www.climatechange.ai/papers/neurips2025/122) (NeurIPS 2025)
+- co-wrote a [tutorial on using our open knowledge graph for climate policy analysis](https://neurips.cc/virtual/2025/loc/san-diego/poster/127006) (NeurIPS 2025)
 - gave talks on
   - [impact, equity and community in our data science](/talks/2024_CPR_at_Nesta_data_science_away_day.pdf) at Nesta (2024)
   - [a policy evidence base as a knowledge graph](https://docs.google.com/presentation/d/1MbYrCa1fhcU7v1X-gLh2sxWonxJpw9uZ5Eiy7qLbRt8/edit#slide=id.g104591c5ed4_0_0) at the Turing Institute (2023)
