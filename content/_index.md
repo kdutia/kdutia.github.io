@@ -8,6 +8,7 @@ my work is broadly centered on NLP, climate change and how to do the former resp
 - collaborative research, on
   - [responsible RAG for climate decision-making from documents](https://arxiv.org/abs/2410.23902) (2024)
   - [identifying climate targets in national laws and policies using machine learning](https://www.climatechange.ai/papers/iclr2024/26) (ICLR 2024)
+  - [distilling GPT-5 quality BERT classifiers](https://labs.climatepolicyradar.org/tech-blog/2026/01/28/our-first-distilled-classifier.html)
 - a technical analysis tool [for the First Global Stocktake](https://gst1.org/), partnered with the UNFCCC
 
 **supporting the broader community** through organising events and online spaces, and doing talks
