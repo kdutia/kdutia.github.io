@@ -1,4 +1,4 @@
-hello! I'm a machine learning engineer who's interested in ways of doing NLP collaboratively, responsibly, and for social good
+I'm a machine learning engineer who's interested in ways of doing NLP & AI collaboratively, responsibly, and for social good
 
 I'm currently a senior machine learning engineer at [distil labs](https://distillabs.ai).
 
