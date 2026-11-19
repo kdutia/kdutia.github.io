@@ -13,7 +13,7 @@ and before that, lead developer on the [Heritage Connector](https://www.sciencem
   - [responsible RAG for climate decision-making from documents](https://arxiv.org/abs/2410.23902) (2024)
   - [identifying climate targets in national laws and policies using machine learning](https://www.climatechange.ai/papers/iclr2024/26) (ICLR 2024)
   - [distilling GPT-5 quality BERT classifiers](https://labs.climatepolicyradar.org/tech-blog/2026/01/28/our-first-distilled-classifier.html)
-  - [semi-automatically building a knowledge graph between digital museum collections and Wikidata](https://doi.org/10.1002/ail2.23) (Wiley Applied AI Letters, 2021)
+  - [a machine learning framework for building a knowledge graph between museum collections and Wikidata](https://doi.org/10.1002/ail2.23) (wiley applied AI letters, 2021)
 - a technical analysis tool [for the First Global Stocktake](https://gst1.org/), partnered with the UNFCCC
 
 i've also **supported the broader community** through
