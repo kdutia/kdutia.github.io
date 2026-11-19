@@ -1,11 +1,10 @@
-hello! I'm kalyan, a data scientist/machine learning engineer. i'm interested in ways of doing NLP collaboratively, responsibly, and for social good.
+hello! I'm a machine learning engineer who's interested in ways of doing NLP collaboratively, responsibly, and for social good
 
 I'm currently a senior machine learning engineer at [distil labs](https://distillabs.ai).
 
-previously, I was: 
+previously, I was founding, principal data scientist at [Climate Policy Radar](https://climatepolicyradar.org/) who build free, open tools which use natural language processing (NLP) to improve climate decision-making from documents
 
-- founding, principal data scientist at [Climate Policy Radar](https://climatepolicyradar.org/) who build free, open tools which use natural language processing (NLP) to improve climate decision-making from documents
-- lead developer on the [Heritage Connector](https://www.sciencemuseumgroup.org.uk/projects/heritage-connector) research project at the Science Museum and V&A in London, which built a system for building knowledge graphs from museum collections using NLP and Wikidata
+and before that, lead developer on the [Heritage Connector](https://www.sciencemuseumgroup.org.uk/projects/heritage-connector) research project at the Science Museum and V&A in London, which built a system for building knowledge graphs from museum collections using NLP and Wikidata
 
 **things i've built** include
 
